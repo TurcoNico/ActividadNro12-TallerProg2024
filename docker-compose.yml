@@ -22,3 +22,18 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - 3307:3306    
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
